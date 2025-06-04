@@ -53,7 +53,7 @@ There is also a demo application within the `Asteroids` folder.
 [nuget-url]: https://www.nuget.org/packages/EcsR3/
 [discord-image]: https://img.shields.io/discord/488609938399297536.svg
 [discord-url]: https://discord.gg/bS2rnGz
-[license-image]: https://img.shields.io/github/license/EcsR3/EcsR3.MonoGame.svg
-[license-url]: https://github.com/EcsR3/EcsR3.MonoGame/blob/master/LICENSE
+[license-image]: https://img.shields.io/github/license/EcsRx/EcsR3.MonoGame.svg
+[license-url]: https://github.com/EcsRx/EcsR3.MonoGame/blob/master/LICENSE
 [gitbook-image]: https://img.shields.io/static/v1.svg?label=Documentation&message=Read%20Now&color=Green&style=flat
 [gitbook-url]: https://ecsr3.gitbook.io/project/
