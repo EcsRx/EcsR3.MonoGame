@@ -49,11 +49,11 @@ Will add monogame specific documentation within this repo as time goes on, but f
 
 There is also a demo application within the `Asteroids` folder.
 
-[nuget-image]: https://img.shields.io/nuget/v/ecsr3.monogame.svg
+[nuget-image]: https://img.shields.io/nuget/v/EcsR3.MonoGame.svg
 [nuget-url]: https://www.nuget.org/packages/EcsR3/
 [discord-image]: https://img.shields.io/discord/488609938399297536.svg
 [discord-url]: https://discord.gg/bS2rnGz
-[license-image]: https://img.shields.io/github/license/ecsr3/ecsr3.monogame.svg
-[license-url]: https://github.com/EcsR3/ecsr3.monogame/blob/master/LICENSE
+[license-image]: https://img.shields.io/github/license/EcsR3/EcsR3.MonoGame.svg
+[license-url]: https://github.com/EcsR3/EcsR3.MonoGame/blob/master/LICENSE
 [gitbook-image]: https://img.shields.io/static/v1.svg?label=Documentation&message=Read%20Now&color=Green&style=flat
 [gitbook-url]: https://ecsr3.gitbook.io/project/
