@@ -12,26 +12,26 @@ namespace EcsR3.MonoGame.Examples.Asteroids.Game.Systems.Infrastructure;
 
 public class LifecycleManagementSystem : IManualSystem
 {
-    private readonly IEcsRxGame _ecsRxGame;
+    private readonly IEcsR3Game _ecsR3Game;
     private readonly List<IDisposable> _subscriptions = new List<IDisposable>();
 
-    public LifecycleManagementSystem(IEcsRxGame ecsRxGame)
-    { _ecsRxGame = ecsRxGame; }
+    public LifecycleManagementSystem(IEcsR3Game ecsR3Game)
+    { _ecsR3Game = ecsR3Game; }
 
     private void CheckIfGameShouldQuit(ElapsedTime elapsedTime)
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || 
             Keyboard.GetState().IsKeyDown(Keys.Escape))
-        { _ecsRxGame.Exit(); }
+        { _ecsR3Game.Exit(); }
     }
 
     private void ClearScreen(ElapsedTime elapsedTime)
-    { _ecsRxGame.EcsRxGraphicsDevice.Clear(Color.DarkSlateGray); }
+    { _ecsR3Game.EcsR3GraphicsDevice.Clear(Color.DarkSlateGray); }
 
     public void StartSystem()
     {
-        var quitSubscriptions = _ecsRxGame.OnUpdate.Subscribe(CheckIfGameShouldQuit);
-        var clearSubscriptions = _ecsRxGame.OnPreRender.Subscribe(ClearScreen);
+        var quitSubscriptions = _ecsR3Game.OnUpdate.Subscribe(CheckIfGameShouldQuit);
+        var clearSubscriptions = _ecsR3Game.OnPreRender.Subscribe(ClearScreen);
         _subscriptions.Add(quitSubscriptions);
         _subscriptions.Add(clearSubscriptions);
     }

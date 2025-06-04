@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace EcsR3.MonoGame.Wrappers;
 
-public interface IEcsRxSpriteBatch
+public interface IEcsR3SpriteBatch
 {
     void Begin(SpriteSortMode sortMode = SpriteSortMode.Deferred, BlendState blendState = null, SamplerState samplerState = null, DepthStencilState depthStencilState = null, RasterizerState rasterizerState = null, Effect effect = null, Matrix? transformMatrix = null);
     void End();

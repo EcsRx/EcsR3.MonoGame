@@ -4,11 +4,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace EcsR3.MonoGame.Wrappers;
 
-public class EcsRxGraphicsDevice : IEcsRxGraphicsDevice
+public class EcsR3GraphicsDevice : IEcsR3GraphicsDevice
 {
     public GraphicsDevice InternalDevice { get; }
         
-    public EcsRxGraphicsDevice(GraphicsDevice internalDevice)
+    public EcsR3GraphicsDevice(GraphicsDevice internalDevice)
     {
         InternalDevice = internalDevice;
     }

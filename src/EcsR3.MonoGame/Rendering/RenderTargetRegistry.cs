@@ -9,9 +9,9 @@ public abstract class RenderTargetRegistry<T> : IRenderTargetRegistry<T>
 {
     protected readonly Dictionary<int, T> _renderTargets = new Dictionary<int, T>();
         
-    public IEcsRxGraphicsDevice GraphicsDevice { get; }
+    public IEcsR3GraphicsDevice GraphicsDevice { get; }
 
-    protected RenderTargetRegistry(IEcsRxGraphicsDevice graphicsDevice)
+    protected RenderTargetRegistry(IEcsR3GraphicsDevice graphicsDevice)
     {
         GraphicsDevice = graphicsDevice;
     }

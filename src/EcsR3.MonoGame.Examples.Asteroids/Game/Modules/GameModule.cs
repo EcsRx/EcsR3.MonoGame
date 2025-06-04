@@ -16,8 +16,8 @@ public class GameModule : IDependencyModule
     {
         registry.Bind<ICamera>(x => x.ToMethod(resolver =>
         {
-            var ecsRxGraphicsDevice = resolver.Resolve<IEcsRxGraphicsDevice>();
-            return new Camera(ecsRxGraphicsDevice.InternalDevice);
+            var ecsR3GraphicsDevice = resolver.Resolve<IEcsR3GraphicsDevice>();
+            return new Camera(ecsR3GraphicsDevice.InternalDevice);
         }));
 
         registry.Bind<ComputedRuntimeColliders>(x => x.ToMethod(resolver =>

@@ -21,13 +21,13 @@ public class SpriteDrawingSystem : SpriteBatchSystem
         
     private readonly ICamera _camera;
 
-    public SpriteDrawingSystem(IEcsRxSpriteBatch ecsRxSpriteBatch, ICamera camera) : base(ecsRxSpriteBatch)
+    public SpriteDrawingSystem(IEcsR3SpriteBatch ecsR3SpriteBatch, ICamera camera) : base(ecsR3SpriteBatch)
     {
         _camera = camera;
     }
 
     public override void PreDraw()
-    { (EcsRxSpriteBatch as SpriteBatch).Begin(_camera); }
+    { (EcsR3SpriteBatch as SpriteBatch).Begin(_camera); }
 
     public override void Process(IEntityComponentAccessor entityComponentAccessor, Entity entity)
     {
@@ -36,6 +36,6 @@ public class SpriteDrawingSystem : SpriteBatchSystem
         var transform = transformComponent.Transform;
             
         var origin = new Vector2(spriteComponent.Sprite.Width / 2f, spriteComponent.Sprite.Height / 2f);
-        EcsRxSpriteBatch.Draw(spriteComponent.Sprite, transform.Position, null, Color.White, transform.Rotation, origin, transform.Scale, SpriteEffects.None, 0);
+        EcsR3SpriteBatch.Draw(spriteComponent.Sprite, transform.Position, null, Color.White, transform.Rotation, origin, transform.Scale, SpriteEffects.None, 0);
     }
 }

@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace EcsR3.MonoGame.Wrappers;
 
-public interface IEcsRxGraphicsDevice
+public interface IEcsR3GraphicsDevice
 {
     GraphicsDevice InternalDevice { get; }
         

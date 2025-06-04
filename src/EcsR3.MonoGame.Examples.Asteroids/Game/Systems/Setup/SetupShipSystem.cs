@@ -17,10 +17,10 @@ public class SetupShipSystem : ISetupSystem
 {
     public IGroup Group { get; } = new Group(typeof(PlayerComponent), typeof(SpriteComponent), typeof(Transform2DComponent));
         
-    public IEcsRxContentManager ContentManager { get; }
-    public IEcsRxGraphicsDevice GraphicsDevice { get; }
+    public IEcsR3ContentManager ContentManager { get; }
+    public IEcsR3GraphicsDevice GraphicsDevice { get; }
 
-    public SetupShipSystem(IEcsRxContentManager contentManager, IEcsRxGraphicsDevice graphicsDevice)
+    public SetupShipSystem(IEcsR3ContentManager contentManager, IEcsR3GraphicsDevice graphicsDevice)
     {
         ContentManager = contentManager;
         GraphicsDevice = graphicsDevice;

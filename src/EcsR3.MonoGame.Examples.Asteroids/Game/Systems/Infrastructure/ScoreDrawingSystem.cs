@@ -18,7 +18,7 @@ public class ScoreDrawingSystem : SpriteBatchSystem
     public override IGroup Group { get; } =  new Group(typeof(PlayerComponent));
     public SpriteFont GameFont { get; }
         
-    public ScoreDrawingSystem(IEcsRxSpriteBatch ecsRxSpriteBatch, IEcsRxContentManager contentManager) : base(ecsRxSpriteBatch)
+    public ScoreDrawingSystem(IEcsR3SpriteBatch ecsR3SpriteBatch, IEcsR3ContentManager contentManager) : base(ecsR3SpriteBatch)
     {
         GameFont = contentManager.Load<SpriteFont>("GameFont");
     }
@@ -29,6 +29,6 @@ public class ScoreDrawingSystem : SpriteBatchSystem
 
         var playerNumber = playerComponent.PlayerIndex + 1;
         var position = new Vector2(24, playerNumber * 24);
-        EcsRxSpriteBatch.DrawString(GameFont, $"Player {playerNumber}: {playerComponent.Score.ToString()}", position, Color.White);
+        EcsR3SpriteBatch.DrawString(GameFont, $"Player {playerNumber}: {playerComponent.Score.ToString()}", position, Color.White);
     }
 }

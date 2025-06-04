@@ -10,23 +10,23 @@ namespace EcsR3.MonoGame.Modules;
 
 public class MonoGameModule : IDependencyModule
 {
-    private readonly IEcsRxGame _ecsRxGame;
+    private readonly IEcsR3Game _ecsR3Game;
         
-    public MonoGameModule(IEcsRxGame ecsRxGame)
-    { _ecsRxGame = ecsRxGame; }
+    public MonoGameModule(IEcsR3Game ecsR3Game)
+    { _ecsR3Game = ecsR3Game; }
 
     public void Setup(IDependencyRegistry registry)
     {
-        registry.Bind<IEcsRxGame>(x => x.ToInstance(_ecsRxGame));
+        registry.Bind<IEcsR3Game>(x => x.ToInstance(_ecsR3Game));
 
         registry.Unbind<IUpdateScheduler>();
-        registry.Bind<IUpdateScheduler>(x => x.ToInstance(_ecsRxGame));
-        registry.Bind<IGameScheduler>(x => x.ToInstance(_ecsRxGame));
+        registry.Bind<IUpdateScheduler>(x => x.ToInstance(_ecsR3Game));
+        registry.Bind<IGameScheduler>(x => x.ToInstance(_ecsR3Game));
             
-        registry.Bind<IEcsRxContentManager>(x => x.ToInstance(_ecsRxGame.EcsRxContentManager));
-        registry.Bind<IEcsRxSpriteBatch>(x => x.ToInstance(_ecsRxGame.EcsRxSpriteBatch));
-        registry.Bind<IEcsRxGraphicsDeviceManager>(x => x.ToInstance(_ecsRxGame.EcsRxGraphicsDeviceManager));
-        registry.Bind<IEcsRxGraphicsDevice>(x => x.ToInstance(_ecsRxGame.EcsRxGraphicsDevice));
+        registry.Bind<IEcsR3ContentManager>(x => x.ToInstance(_ecsR3Game.EcsR3ContentManager));
+        registry.Bind<IEcsR3SpriteBatch>(x => x.ToInstance(_ecsR3Game.EcsR3SpriteBatch));
+        registry.Bind<IEcsR3GraphicsDeviceManager>(x => x.ToInstance(_ecsR3Game.EcsR3GraphicsDeviceManager));
+        registry.Bind<IEcsR3GraphicsDevice>(x => x.ToInstance(_ecsR3Game.EcsR3GraphicsDevice));
 
         registry.Bind<IRenderTarget2dRegistry, RenderTarget2dRegistry>();
         registry.Bind<IRenderTargetCubeRegistry, RenderTargetCubeRegistry>();

@@ -10,14 +10,14 @@ public abstract class SpriteBatchSystem : IGroupSystem
 {
     public abstract IGroup Group { get; }
         
-    protected IEcsRxSpriteBatch EcsRxSpriteBatch { get; }
+    protected IEcsR3SpriteBatch EcsR3SpriteBatch { get; }
 
-    protected SpriteBatchSystem(IEcsRxSpriteBatch ecsRxSpriteBatch)
+    protected SpriteBatchSystem(IEcsR3SpriteBatch ecsR3SpriteBatch)
     {
-        EcsRxSpriteBatch = ecsRxSpriteBatch;
+        EcsR3SpriteBatch = ecsR3SpriteBatch;
     }
 
-    public virtual void PreDraw() { EcsRxSpriteBatch.Begin(); }
+    public virtual void PreDraw() { EcsR3SpriteBatch.Begin(); }
     public abstract void Process(IEntityComponentAccessor entityComponentAccessor, Entity entity);
-    public virtual void PostDraw() { EcsRxSpriteBatch.End(); }
+    public virtual void PostDraw() { EcsR3SpriteBatch.End(); }
 }

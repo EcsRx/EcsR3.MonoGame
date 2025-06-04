@@ -20,11 +20,11 @@ public class SetupMeteorSystem : ISetupSystem
 {
     public IGroup Group { get; } = new Group(typeof(MeteorComponent), typeof(SpriteComponent), typeof(Transform2DComponent), typeof(ColliderComponent), typeof(MoveableComponent));
         
-    public IEcsRxContentManager ContentManager { get; }
-    public IEcsRxGraphicsDevice GraphicsDevice { get; }
+    public IEcsR3ContentManager ContentManager { get; }
+    public IEcsR3GraphicsDevice GraphicsDevice { get; }
     public Random Random { get; } = new Random();
         
-    public SetupMeteorSystem(IEcsRxContentManager contentManager, IEcsRxGraphicsDevice graphicsDevice)
+    public SetupMeteorSystem(IEcsR3ContentManager contentManager, IEcsR3GraphicsDevice graphicsDevice)
     {
         ContentManager = contentManager;
         GraphicsDevice = graphicsDevice;

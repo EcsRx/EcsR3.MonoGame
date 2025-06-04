@@ -5,7 +5,7 @@ namespace EcsR3.MonoGame.Rendering;
 
 public class RenderTargetCubeRegistry : RenderTargetRegistry<RenderTargetCube>, IRenderTargetCubeRegistry
 {
-    public RenderTargetCubeRegistry(IEcsRxGraphicsDevice graphicsDevice) : base(graphicsDevice)
+    public RenderTargetCubeRegistry(IEcsR3GraphicsDevice graphicsDevice) : base(graphicsDevice)
     {
     }
         

@@ -21,11 +21,11 @@ public class SpriteBatchSystemHandler : IConventionalSystemHandler
     public readonly IComputedEntityGroupRegistry ComputedEntityGroupRegistry;       
     public readonly IDictionary<ISystem, IDisposable> SystemSubscriptions;
     public readonly IGameScheduler GameScheduler;
-    public readonly IEcsRxGraphicsDevice GraphicsDevice;
+    public readonly IEcsR3GraphicsDevice GraphicsDevice;
     public readonly IRenderTarget2dRegistry RenderTarget2dRegistry;
     public readonly IEntityComponentAccessor EntityComponentAccessor;
         
-    public SpriteBatchSystemHandler(IComputedEntityGroupRegistry computedEntityGroupRegistry, IEcsRxGraphicsDevice graphicsDevice, IRenderTarget2dRegistry renderTarget2dRegistry, IGameScheduler scheduler, IEntityComponentAccessor entityComponentAccessor)
+    public SpriteBatchSystemHandler(IComputedEntityGroupRegistry computedEntityGroupRegistry, IEcsR3GraphicsDevice graphicsDevice, IRenderTarget2dRegistry renderTarget2dRegistry, IGameScheduler scheduler, IEntityComponentAccessor entityComponentAccessor)
     {
         ComputedEntityGroupRegistry = computedEntityGroupRegistry;
         SystemSubscriptions = new Dictionary<ISystem, IDisposable>();

@@ -14,21 +14,21 @@ public abstract class EcsR3MonoGameApplication : EcsR3Application, IDisposable
 {
     public override IDependencyRegistry DependencyRegistry { get; } = new NinjectDependencyRegistry();
 
-    protected IEcsRxGame EcsRxGame { get; }
-    protected IEcsRxContentManager EcsRxContentManager => EcsRxGame.EcsRxContentManager;
-    protected IEcsRxGraphicsDeviceManager DeviceManager => EcsRxGame.EcsRxGraphicsDeviceManager;
+    protected IEcsR3Game EcsR3Game { get; }
+    protected IEcsR3ContentManager EcsR3ContentManager => EcsR3Game.EcsR3ContentManager;
+    protected IEcsR3GraphicsDeviceManager DeviceManager => EcsR3Game.EcsR3GraphicsDeviceManager;
 
     public EcsR3MonoGameApplication()
     {
-        EcsRxGame = new EcsRxGame();
+        EcsR3Game = new EcsR3Game();
         StartGame();
     }
 
     protected void StartGame()
     {
         BeforeGameStarted();
-        EcsRxGame.GameLoading.SubscribeOnce(x => StartApplication());
-        EcsRxGame.Run();
+        EcsR3Game.GameLoading.SubscribeOnce(x => StartApplication());
+        EcsR3Game.Run();
     }
 
     protected virtual void BeforeGameStarted()
@@ -45,9 +45,9 @@ public abstract class EcsR3MonoGameApplication : EcsR3Application, IDisposable
     protected override void LoadModules()
     {
         base.LoadModules();
-        DependencyRegistry.LoadModule(new MonoGameModule(EcsRxGame));
+        DependencyRegistry.LoadModule(new MonoGameModule(EcsR3Game));
     }
         
     public void Dispose()
-    { EcsRxGame.Dispose(); }
+    { EcsR3Game.Dispose(); }
 }

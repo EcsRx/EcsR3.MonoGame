@@ -5,13 +5,13 @@ using R3;
 
 namespace EcsR3.MonoGame.Wrappers;
 
-public interface IEcsRxGame : IGameScheduler
+public interface IEcsR3Game : IGameScheduler
 {
     Observable<Unit> GameLoading { get; }
     Observable<Unit> GameUnloading { get; }
-    IEcsRxGraphicsDeviceManager EcsRxGraphicsDeviceManager { get; }
-    IEcsRxSpriteBatch EcsRxSpriteBatch { get; }
-    IEcsRxGraphicsDevice EcsRxGraphicsDevice { get; }
+    IEcsR3GraphicsDeviceManager EcsR3GraphicsDeviceManager { get; }
+    IEcsR3SpriteBatch EcsR3SpriteBatch { get; }
+    IEcsR3GraphicsDevice EcsR3GraphicsDevice { get; }
     LaunchParameters LaunchParameters { get; }
     GameComponentCollection Components { get; }
     TimeSpan InactiveSleepTime { get; }
@@ -21,7 +21,7 @@ public interface IEcsRxGame : IGameScheduler
     TimeSpan TargetElapsedTime { get; }
     bool IsFixedTimeStep { get; set; }
     GameServiceContainer Services { get; }
-    IEcsRxContentManager EcsRxContentManager { get; }
+    IEcsR3ContentManager EcsR3ContentManager { get; }
     GraphicsDevice GraphicsDevice { get; }
     GameWindow Window { get; }
     void Dispose();

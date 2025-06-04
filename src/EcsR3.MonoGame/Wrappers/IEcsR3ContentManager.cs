@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace EcsR3.MonoGame.Wrappers;
 
-public interface IEcsRxContentManager
+public interface IEcsR3ContentManager
 {
     ContentManager InternalManager { get; }
         

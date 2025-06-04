@@ -5,7 +5,7 @@ using SystemsR3.Scheduling;
 
 namespace EcsR3.MonoGame.Wrappers;
 
-public class EcsRxGame : Game, IEcsRxGame
+public class EcsR3Game : Game, IEcsR3Game
 {
     private readonly Subject<ElapsedTime> _onPreUpdate, _onUpdate, _onPostUpdate, _onRender, _onPreRender, _onPostRender;
     private readonly Subject<Unit> _gameLoading;
@@ -19,14 +19,14 @@ public class EcsRxGame : Game, IEcsRxGame
     public Observable<Unit> GameLoading => _gameLoading;
     public Observable<Unit> GameUnloading { get; }
         
-    public IEcsRxGraphicsDeviceManager EcsRxGraphicsDeviceManager { get; }
-    public IEcsRxGraphicsDevice EcsRxGraphicsDevice { get; private set; }
-    public IEcsRxSpriteBatch EcsRxSpriteBatch { get; private set; }
-    public IEcsRxContentManager EcsRxContentManager { get; }
+    public IEcsR3GraphicsDeviceManager EcsR3GraphicsDeviceManager { get; }
+    public IEcsR3GraphicsDevice EcsR3GraphicsDevice { get; private set; }
+    public IEcsR3SpriteBatch EcsR3SpriteBatch { get; private set; }
+    public IEcsR3ContentManager EcsR3ContentManager { get; }
     public GameTime NativeGameTime { get; private set; }
     public ElapsedTime ElapsedTime { get; private set; }
         
-    public EcsRxGame()
+    public EcsR3Game()
     {
         _onPreUpdate = new Subject<ElapsedTime>();
         _onUpdate = new Subject<ElapsedTime>();
@@ -36,9 +36,9 @@ public class EcsRxGame : Game, IEcsRxGame
         _onPostRender = new Subject<ElapsedTime>();
         _gameLoading = new Subject<Unit>();
             
-        EcsRxGraphicsDeviceManager = new EcsRxGraphicsDeviceManager(this);
+        EcsR3GraphicsDeviceManager = new EcsR3GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
-        EcsRxContentManager = new EcsRxContentManager(Content);
+        EcsR3ContentManager = new EcsR3ContentManager(Content);
         IsMouseVisible = true;
         
         var observableSystemComponent = new ObservableSystemComponent(this);
@@ -52,8 +52,8 @@ public class EcsRxGame : Game, IEcsRxGame
 
     protected override void LoadContent()
     {
-        EcsRxGraphicsDevice = new EcsRxGraphicsDevice(GraphicsDevice);
-        EcsRxSpriteBatch = new EcsRxSpriteBatch(GraphicsDevice);
+        EcsR3GraphicsDevice = new EcsR3GraphicsDevice(GraphicsDevice);
+        EcsR3SpriteBatch = new EcsR3SpriteBatch(GraphicsDevice);
         base.LoadContent();
         _gameLoading.OnNext(Unit.Default);
     }

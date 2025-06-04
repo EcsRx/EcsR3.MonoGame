@@ -12,6 +12,6 @@ public class RenderTarget2dRegistry : RenderTargetRegistry<RenderTarget2D>, IRen
         return renderTarget;
     }
 
-    public RenderTarget2dRegistry(IEcsRxGraphicsDevice graphicsDevice) : base(graphicsDevice)
+    public RenderTarget2dRegistry(IEcsR3GraphicsDevice graphicsDevice) : base(graphicsDevice)
     {}
 }

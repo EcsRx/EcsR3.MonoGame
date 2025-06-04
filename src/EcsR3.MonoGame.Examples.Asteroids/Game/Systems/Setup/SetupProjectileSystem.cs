@@ -15,9 +15,9 @@ public class SetupProjectileSystem : ISetupSystem
 {
     public IGroup Group { get; } = new Group(typeof(ProjectileComponent), typeof(SpriteComponent), typeof(Transform2DComponent), typeof(ColliderComponent), typeof(MoveableComponent));
         
-    public IEcsRxContentManager ContentManager { get; }
+    public IEcsR3ContentManager ContentManager { get; }
         
-    public SetupProjectileSystem(IEcsRxContentManager contentManager)
+    public SetupProjectileSystem(IEcsR3ContentManager contentManager)
     {
         ContentManager = contentManager;
     }
