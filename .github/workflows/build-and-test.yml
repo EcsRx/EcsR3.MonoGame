@@ -3,7 +3,7 @@ on: [push]
 
 env:
   BuildVersion: '0.5.${{github.run_number}}'
-  SolutionFile: 'src/EcsR3.MonoGame.sln'
+  SolutionFile: 'src/EcsR3.MonoGame/EcsR3.MonoGame.csproj'
 
 jobs:
   build-and-test:
