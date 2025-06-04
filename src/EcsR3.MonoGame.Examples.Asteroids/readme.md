@@ -1,6 +1,6 @@
-# EcsRx.Monogame Examples - Asteroids
+# EcsR3.Monogame Examples - Asteroids
 
-This is just a simple clone of an asteroids style game that shows how you can use EcsRx and Monogame together.
+This is just a simple clone of an asteroids style game that shows how you can use EcsR3 and Monogame together.
 
 The overall design uses most of the common types of systems with some more advanced usages of other plugins such as the `Computed` and `Transform` ones.
 
@@ -12,7 +12,7 @@ You may be thinking why do we have a `Game` folder, and the reason is that you m
 
 > Which is originally what was going to happen here, but I thought it would be simpler to just do the basics and leave out 2 player modes and main menus.
 
-The `Application` inherits from the `EcsRxMonoGameApplication` and then adds in any dependencies and setup logic, in this case setting up a single ship for the player using `Blueprints`.
+The `Application` inherits from the `EcsR3MonoGameApplication` and then adds in any dependencies and setup logic, in this case setting up a single ship for the player using `Blueprints`.
 
 > You can find out more about `Blueprints` and other bits of the core framework by reading the EcsRx docs.
 
