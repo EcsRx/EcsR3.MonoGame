@@ -6,6 +6,7 @@
     <RollForward>Major</RollForward>
     <PublishReadyToRun>false</PublishReadyToRun>
     <TieredCompilation>false</TieredCompilation>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
   
   <PropertyGroup>
