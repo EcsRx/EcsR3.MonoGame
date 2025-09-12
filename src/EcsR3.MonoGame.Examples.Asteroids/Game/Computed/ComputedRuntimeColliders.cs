@@ -22,7 +22,7 @@ public class ComputedRuntimeColliders : ComputedFromComponentGroup<Dictionary<in
     protected override Observable<Unit> RefreshWhen()
     { return Observable.Never<Unit>(); }
 
-    protected override void UpdateComputedData(ReadOnlyMemory<(Entity, ColliderComponent, Transform2DComponent)> componentData)
+    protected override bool UpdateComputedData(ReadOnlyMemory<(Entity, ColliderComponent, Transform2DComponent)> componentData)
     {
         var componentDataSpan = componentData.Span;
         for (var i = 0; i < componentDataSpan.Length; i++)
@@ -31,5 +31,6 @@ public class ComputedRuntimeColliders : ComputedFromComponentGroup<Dictionary<in
             var collider = transformComponent.Transform.GetCollisionArea(colliderComponent);
             ComputedData[entity.Id] = collider;
         }
+        return true;
     }
 }
