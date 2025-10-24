@@ -35,5 +35,5 @@ public interface IEcsR3Game : IGameScheduler
     event EventHandler<EventArgs> Activated;
     event EventHandler<EventArgs> Deactivated;
     event EventHandler<EventArgs> Disposed;
-    event EventHandler<EventArgs> Exiting;
+    event EventHandler<ExitingEventArgs> Exiting;
 }
