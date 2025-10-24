@@ -44,7 +44,7 @@ public class EcsR3Game : Game, IEcsR3Game
         var observableSystemComponent = new ObservableSystemComponent(this);
         Components.Add(observableSystemComponent);
 
-        GameUnloading = Observable.FromEventHandler<EventArgs>(
+        GameUnloading = Observable.FromEventHandler<ExitingEventArgs>(
                 x => Exiting += x, 
                 x => Exiting -= x)
             .Select(x => Unit.Default);
